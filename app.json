@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "zerornjs",
     "name": "zero_RN-JS",
     "slug": "zero_RN-JS",
     "version": "1.0.0",
@@ -24,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
