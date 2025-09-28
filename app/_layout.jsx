@@ -1,45 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { Tabs } from 'expo-router'
-import { Ionicons } from '@expo/vector-icons';
-import React from 'react'
+import { Stack } from 'expo-router'
+import { Colors } from '../constants/Colors'
+import { StatusBar } from 'expo-status-bar'
 
-const tabLayout = () => {
+const RootLayout = () => {
+
+    const theme = Colors.ftstic
+
   return (
-    <Tabs>
-        <Tabs.Screen
-            name="index"
-            options={{
-                title: 'Home',
-                tabBarIcon: ({ color }) => <Ionicons size={28} name="home" color={color} />,
-            }}
-        />
+    <>
+        <StatusBar value="auto" />
+        <Stack screenOptions={{
+            headerStyle: {backgroundColor: theme.background},
+            headerTintColor: theme.general,
+        }}>
 
-        <Tabs.Screen
-            name="flex_1"
-            options={{
-                title: 'Flex 1',
-                tabBarIcon: ({ color }) => <Ionicons size={28} name="apps-outline" color={color} />,
-            }}
-        />
+            <Stack.Screen name="index" options={{ title: "Home" }} />
+            
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
 
-        <Tabs.Screen
-            name="flex_2"
-            options={{
-                title: 'Flex 2',    
-                tabBarIcon: ({ color }) => <Ionicons size={28} name="apps-outline" color={color} />,
-            }}
-        />
-
-        <Tabs.Screen
-            name="_Layout"
-            options={{
-                href: null,
-            }}
-        />
-    </Tabs>
+        </Stack>
+    </>
   )
 }
 
-export default tabLayout
-
-const styles = StyleSheet.create({})
+export default RootLayout
