@@ -1,4 +1,4 @@
-import { Text } from 'react-native'
+import { Text } from 'react-native-paper'
 import { Colors } from '../constants/Colors'
 
 const ThemedText = ({ style, title=false, ...props }) => {
@@ -8,6 +8,9 @@ const ThemedText = ({ style, title=false, ...props }) => {
 
     return (
         <Text 
+
+            variant={title ? "titleLarge" : "bodyMedium"}
+
             style={[{ color: textColor }, style]}
             {...props}
         />
